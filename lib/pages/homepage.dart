@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telegram/widgets/drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // appBar
         appBar: AppBar(
           iconTheme: const IconThemeData(
             color: Colors.black,
@@ -25,68 +27,63 @@ class _HomePageState extends State<HomePage> {
             Icon(Icons.search),
           ],
         ),
-        body: const Center(
-          child: Text("hi"),
-        ),
+
+        // floating action button
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: const CircleAvatar(
-                  backgroundColor: Colors.deepPurpleAccent,
-                  child: FlutterLogo(
-                    size: 42.0,
+
+        // drawer
+        drawer: const DrawerWidgets(),
+
+        // body
+        body: ListView.builder(
+          itemCount: 200,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 2.0),
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(2.0),
+              leading: const CircleAvatar(
+                backgroundImage: NetworkImage(""),
+                radius: 25,
+              ),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "User Name",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                ),
-                accountName: const Text("sara k."),
-                accountEmail: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text("Set Emoji Status"),
-                    Icon(Icons.keyboard_arrow_down),
-                  ],
-                ),
+                  Text(
+                    "08:30 PM",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
               ),
-              ListTile(
-                leading: const Icon(Icons.group),
-                title: const Text("New Group"),
-                onTap: () {},
+              subtitle: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("User recent messages"),
+                  Chip(
+                    label: Text(
+                      "4",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    ),
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.all(1),
+                  )
+                ],
               ),
-              ListTile(
-                leading: const Icon(Icons.campaign_rounded),
-                title: const Text("New Channel"),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.account_box),
-                title: const Text("Contacts"),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.call),
-                title: const Text("Calls"),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.bookmark),
-                title: const Text("Saved Messages"),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.settings),
-                title: const Text("Settings"),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.mode_night),
-                title: const Text("Night Mood"),
-                onTap: () {},
-              ),
-            ],
+            ),
           ),
         ),
       ),
