@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telegram/pages/chat.dart';
-import 'package:telegram/pages/homepage.dart';
+import 'package:telegram/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Telegram',
-      home: const HomePage(),
+      home: const ProfilePage(),
       routes: {
         '/chat': (context) => const ChatPage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }

@@ -14,10 +14,13 @@ class _DrawerWidgetsState extends State<DrawerWidgets> {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            currentAccountPicture: const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg"),
-              radius: 100,
+            currentAccountPicture: GestureDetector(
+              onTap: () => Navigator.of(context).pushNamed('/profile'),
+              child: const CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg"),
+                radius: 100,
+              ),
             ),
             accountName: const Text("Sara K."),
             accountEmail: Row(
