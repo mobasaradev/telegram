@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         // appBar
         appBar: AppBar(
+          elevation: 0,
           iconTheme: const IconThemeData(
             color: Colors.black,
           ),
