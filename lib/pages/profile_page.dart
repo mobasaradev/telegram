@@ -29,34 +29,39 @@ class _ProfilePageState extends State<ProfilePage> {
             Icon(Icons.more_vert),
           ],
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                child: const ListTile(
-                  leading: Icon(Icons.camera_alt),
-                  title: Text(
-                    "Set Your Profile Photo",
-                    style: TextStyle(color: Colors.blue),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Container(
+                  decoration: const BoxDecoration(color: Colors.white),
+                  child: const ListTile(
+                    leading: Icon(Icons.camera_alt),
+                    title: Text(
+                      "Set Your Profile Photo",
+                      style: TextStyle(color: Colors.blue),
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
                 decoration: const BoxDecoration(color: Colors.white),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(top: 10, left: 15),
                       child: Text(
                         "Account",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w600),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.blue,
+                        ),
                       ),
                     ),
                     ListTile(
@@ -78,8 +83,157 @@ class _ProfilePageState extends State<ProfilePage> {
                       subtitle: Text("Write about you"),
                     ),
                   ],
-                )),
-          ],
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                decoration: const BoxDecoration(color: Colors.white),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(top: 10, left: 15),
+                      child: Text(
+                        "Settings",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.notifications),
+                      title: Text(
+                        "Notification and Sounds",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.lock),
+                      title: Text(
+                        "Privacy and Security",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.donut_large_sharp),
+                      title: Text(
+                        "Data and Storage",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.chat_bubble),
+                      title: Text(
+                        "Chat Settings",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.emoji_emotions),
+                      title: Text(
+                        "Stickers and Emoji",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.folder_outlined),
+                      title: Text(
+                        "Chat Folders",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.devices),
+                      title: Text(
+                        "Devices",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.language),
+                      title: Text(
+                        "Language",
+                      ),
+                    ),
+                    Divider(),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                decoration: const BoxDecoration(color: Colors.white),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    ListTile(
+                      leading: Icon(
+                        Icons.workspace_premium_outlined,
+                        color: Colors.deepPurple,
+                      ),
+                      title: Text(
+                        "Telegram Premium",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Container(
+                decoration: const BoxDecoration(color: Colors.white),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(top: 10, left: 15),
+                      child: Text(
+                        "Help",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.chat_outlined),
+                      title: Text(
+                        "Ask a help",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.question_mark),
+                      title: Text(
+                        "Telegram FAQ",
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(Icons.security),
+                      title: Text(
+                        "Privacy Policy",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  "Telegram for Android v9.0.2 (2808)",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
