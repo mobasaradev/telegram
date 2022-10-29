@@ -19,7 +19,7 @@ class _DrawerWidgetsState extends State<DrawerWidgets> {
                   "https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg"),
               radius: 100,
             ),
-            accountName: const Text("mac R."),
+            accountName: const Text("Sara K."),
             accountEmail: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
